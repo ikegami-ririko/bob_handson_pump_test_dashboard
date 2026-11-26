@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^(execute_command|write_file|insert_content|apply_diff|search_and_replace)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh .bob/hooks/block-external-deps.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
